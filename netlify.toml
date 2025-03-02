@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[functions]
+  directory = ".next/serverless" # For Next.js API routes
+  node_bundler = "esbuild"
+  timeout = 10 # Increase if your DB connections are slow
+  # Uncomment below if using Node 18+
+  # node_version = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[dev]
+  framework = "next"
+  targetPort = 3000
