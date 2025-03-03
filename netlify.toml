@@ -5,9 +5,9 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[functions]
+[[functions."*"]]
+  timeout = 10
   node_bundler = "esbuild"
-  timeout = 10 # Timeout in seconds (max 30)
   external_node_modules = ["mongodb", "mongodb-client-encryption", "aws4"]
   included_files = ["./lib/mongodb.ts"]
   # Uncomment if using Node 18+
